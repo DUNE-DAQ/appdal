@@ -115,7 +115,7 @@ ReadoutApplication::generate_modules(oksdbinterfaces::Configuration* confdb,
 
   // Create here the Queue on which all data fragments are forwarded to the fragment aggregator
   // and a container for the queues of data request to TP handler and DLH
-  if (faOutputQDesc == nullptr) {
+  if (faOutputQDesc == nullptr || faNetDesc == nullptr) {
     throw (BadConf(ERS_HERE, "No fragment output queue descriptor given"));
   }
   oksdbinterfaces::ConfigObject faQueueObj;
