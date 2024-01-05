@@ -165,6 +165,7 @@
  <class name="DataStoreConf">
   <attribute name="type" type="string"/>
   <attribute name="operational_environment" type="string"/>
+  <attribute name="directory_path" type="string" description="The base directory for saving files" is-not-null="yes"/>
   <attribute name="mode" description="The operation mode that the DataStore should use when organizing the data into files" type="enum" range="all-per-file,one-event-per-file" init-value="all-per-file" is-not-null="yes"/>
   <attribute name="max_file_size" type="u64" init-value="0" is-not-null="yes"/>
   <attribute name="disable_unique_filename_suffix" type="bool" init-value="false"/>
@@ -191,6 +192,20 @@
  <class name="FakeCardReader">
   <superclass name="DataReader"/>
  </class>
+
+  <class name="FakeDataProd">
+    <superclass name="DaqModule"/>
+    <relationship name="configuration" class-type="FakeDataProdConf" low-cc="one" high-cc="one" is-composite="no" is-exclusive="no" is-dependent="no"/>
+  </class>
+
+  <class name="FakeDataProdConf">
+    <attribute name="system_type" type="string" description="The system type of the link" init-value="" is-not-null="yes"/>
+    <attribute name="source_id" type="u32" description="The SourceID of this link" is-not-null="yes"/>
+    <attribute name="time_tick_diff" type="u32" init-value="1" description="Time tick difference between frames" is-not-null="yes"/>
+    <attribute name="frame_size" type="u32" init-value="0" description="The size of a fake frame" is-not-null="yes"/>
+    <attribute name="response_delay" type="u32" init-value="0" description="Wait for this amount of ns before sending the fragment" is-not-null="yes"/>
+    <attribute name="fragment_type" type="string" description="Fragment type of the response" is-not-null="yes"/>
+  </class>
 
  <class name="FilenameParams">
   <attribute name="overall_prefix" type="string" init-value="minidaq" is-not-null="yes"/>
@@ -327,14 +342,16 @@
  </class>
 
  <class name="TPWriterConf">
-  <attribute name="tp_accumulation_interval" type="u64" init-value="0" is-not-null="yes"/>
+   <attribute name="tp_accumulation_interval" type="u64" init-value="0" is-not-null="yes"/>
+   <attribute name="source_id" type="u32" is-not-null="yes"/>
   <relationship name="data_store_params" class-type="DataStoreConf" low-cc="one" high-cc="one" is-composite="no" is-exclusive="no" is-dependent="no"/>
  </class>
 
  <class name="TRBConf">
   <attribute name="queues_timeout" type="u32" init-value="0" is-not-null="yes"/>
   <attribute name="trigger_record_timeout_ms" type="u32" init-value="0" is-not-null="yes"/>
-  <attribute name="mac_time_window" type="s64" init-value="0" is-not-null="yes"/>
+  <attribute name="max_time_window" type="s64" init-value="0" is-not-null="yes"/>
+   <attribute name="source_id" type="u32" is-not-null="yes"/>
  </class>
 
  <class name="TRBuilder">
