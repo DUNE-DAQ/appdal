@@ -19,7 +19,7 @@ find_package(coredal REQUIRED)
 daq_oks_codegen(application.schema.xml fdmodules.schema.xml
   NAMESPACE dunedaq::appdal DEP_PKGS coredal)
 
-daq_add_library(ReadoutApplication.cpp NICReceiver.cpp SmartDaqApplication.cpp
+daq_add_library(ReadoutApplication.cpp SmartDaqApplication.cpp
   DFApplication.cpp DFOApplication.cpp TPWriterApplication.cpp
  LINK_LIBRARIES oksdbinterfaces::oksdbinterfaces okssystem::okssystem
   logging::logging coredal::coredal oks::oks ers::ers)

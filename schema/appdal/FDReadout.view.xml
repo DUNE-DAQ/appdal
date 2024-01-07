@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="ASCII"?>
+
+<!-- oks-data version 2.2 -->
+
+
+<!DOCTYPE oks-data [
+  <!ELEMENT oks-data (info, (include)?, (comments)?, (obj)+)>
+  <!ELEMENT info EMPTY>
+  <!ATTLIST info
+      name CDATA #IMPLIED
+      type CDATA #IMPLIED
+      num-of-items CDATA #REQUIRED
+      oks-format CDATA #FIXED "data"
+      oks-version CDATA #REQUIRED
+      created-by CDATA #IMPLIED
+      created-on CDATA #IMPLIED
+      creation-time CDATA #IMPLIED
+      last-modified-by CDATA #IMPLIED
+      last-modified-on CDATA #IMPLIED
+      last-modification-time CDATA #IMPLIED
+  >
+  <!ELEMENT include (file)*>
+  <!ELEMENT file EMPTY>
+  <!ATTLIST file
+      path CDATA #REQUIRED
+  >
+  <!ELEMENT comments (comment)*>
+  <!ELEMENT comment EMPTY>
+  <!ATTLIST comment
+      creation-time CDATA #REQUIRED
+      created-by CDATA #REQUIRED
+      created-on CDATA #REQUIRED
+      author CDATA #REQUIRED
+      text CDATA #REQUIRED
+  >
+  <!ELEMENT obj (attr | rel)*>
+  <!ATTLIST obj
+      class CDATA #REQUIRED
+      id CDATA #REQUIRED
+  >
+  <!ELEMENT attr (data)*>
+  <!ATTLIST attr
+      name CDATA #REQUIRED
+      type (bool|s8|u8|s16|u16|s32|u32|s64|u64|float|double|date|time|string|uid|enum|class|-) "-"
+      val CDATA ""
+  >
+  <!ELEMENT data EMPTY>
+  <!ATTLIST data
+      val CDATA #REQUIRED
+  >
+  <!ELEMENT rel (ref)*>
+  <!ATTLIST rel
+      name CDATA #REQUIRED
+      class CDATA ""
+      id CDATA ""
+  >
+  <!ELEMENT ref EMPTY>
+  <!ATTLIST ref
+      class CDATA #REQUIRED
+      id CDATA #REQUIRED
+  >
+]>
+
+<oks-data>
+
+<info name="" type="" num-of-items="57" oks-format="data" oks-version="oks-08-03-04-11-g3f5bde7 built &quot;Feb 21 2023&quot;" created-by="glehmann" created-on="lxplus928.cern.ch" creation-time="20240107T173931" last-modified-by="glehmann" last-modified-on="lxplus928.cern.ch" last-modification-time="20240107T173932"/>
+
+<obj class="ALink" id="DataReader-2-DataReaderConf-via-configuration">
+ <attr name="Name" type="string" val="configuration"/>
+ <rel name="From" class="Class" id="DataReader"/>
+ <rel name="To" class="Class" id="DataReaderConf"/>
+ <rel name="Points">
+  <ref class="Point" id="1 DataReader-2-DataReaderConf-via-configuration"/>
+  <ref class="Point" id="2 DataReader-2-DataReaderConf-via-configuration"/>
+  <ref class="Point" id="3 DataReader-2-DataReaderConf-via-configuration"/>
+  <ref class="Point" id="4 DataReader-2-DataReaderConf-via-configuration"/>
+ </rel>
+</obj>
+
+<obj class="ALink" id="DataReader-2-ReadoutInterface-via-interfaces">
+ <attr name="Name" type="string" val="interfaces"/>
+ <rel name="From" class="Class" id="DataReader"/>
+ <rel name="To" class="Class" id="ReadoutInterface"/>
+ <rel name="Points">
+  <ref class="Point" id="1 DataReader-2-ReadoutInterface-via-interfaces"/>
+  <ref class="Point" id="2 DataReader-2-ReadoutInterface-via-interfaces"/>
+  <ref class="Point" id="3 DataReader-2-ReadoutInterface-via-interfaces"/>
+  <ref class="Point" id="4 DataReader-2-ReadoutInterface-via-interfaces"/>
+ </rel>
+</obj>
+
+<obj class="ALink" id="NICInterface-2-NICInterfaceConfiguration-via-configuration">
+ <attr name="Name" type="string" val="configuration"/>
+ <rel name="From" class="Class" id="NICInterface"/>
+ <rel name="To" class="Class" id="NICInterfaceConfiguration"/>
+ <rel name="Points">
+  <ref class="Point" id="1 NICInterface-2-NICInterfaceConfiguration-via-configuration"/>
+  <ref class="Point" id="2 NICInterface-2-NICInterfaceConfiguration-via-configuration"/>
+  <ref class="Point" id="3 NICInterface-2-NICInterfaceConfiguration-via-configuration"/>
+  <ref class="Point" id="4 NICInterface-2-NICInterfaceConfiguration-via-configuration"/>
+ </rel>
+</obj>
+
+<obj class="ALink" id="NICInterfaceConfiguration-2-NICStatsConf-via-stats_conf">
+ <attr name="Name" type="string" val="stats_conf"/>
+ <rel name="From" class="Class" id="NICInterfaceConfiguration"/>
+ <rel name="To" class="Class" id="NICStatsConf"/>
+ <rel name="Points">
+  <ref class="Point" id="1 NICInterfaceConfiguration-2-NICStatsConf-via-stats_conf"/>
+  <ref class="Point" id="2 NICInterfaceConfiguration-2-NICStatsConf-via-stats_conf"/>
+  <ref class="Point" id="3 NICInterfaceConfiguration-2-NICStatsConf-via-stats_conf"/>
+  <ref class="Point" id="4 NICInterfaceConfiguration-2-NICStatsConf-via-stats_conf"/>
+ </rel>
+</obj>
+
+<obj class="Class" id="DataReader">
+ <attr name="x" type="s16" val="359"/>
+ <attr name="y" type="s16" val="21"/>
+</obj>
+
+<obj class="Class" id="DataReaderConf">
+ <attr name="x" type="s16" val="384"/>
+ <attr name="y" type="s16" val="98"/>
+</obj>
+
+<obj class="Class" id="EthStreamParameters">
+ <attr name="x" type="s16" val="10"/>
+ <attr name="y" type="s16" val="123"/>
+</obj>
+
+<obj class="Class" id="FelixInterface">
+ <attr name="x" type="s16" val="864"/>
+ <attr name="y" type="s16" val="14"/>
+</obj>
+
+<obj class="Class" id="FelixStreamParameters">
+ <attr name="x" type="s16" val="221"/>
+ <attr name="y" type="s16" val="123"/>
+</obj>
+
+<obj class="Class" id="NICInterface">
+ <attr name="x" type="s16" val="617"/>
+ <attr name="y" type="s16" val="83"/>
+</obj>
+
+<obj class="Class" id="NICInterfaceConfiguration">
+ <attr name="x" type="s16" val="590"/>
+ <attr name="y" type="s16" val="231"/>
+</obj>
+
+<obj class="Class" id="NICReceiverConf">
+ <attr name="x" type="s16" val="310"/>
+ <attr name="y" type="s16" val="218"/>
+</obj>
+
+<obj class="Class" id="NICStatsConf">
+ <attr name="x" type="s16" val="863"/>
+ <attr name="y" type="s16" val="296"/>
+</obj>
+
+<obj class="Class" id="ReadoutInterface">
+ <attr name="x" type="s16" val="666"/>
+ <attr name="y" type="s16" val="17"/>
+</obj>
+
+<obj class="Class" id="StreamParameters">
+ <attr name="x" type="s16" val="51"/>
+ <attr name="y" type="s16" val="18"/>
+</obj>
+
+<obj class="GLink" id="DataReaderConf-2-NICReceiverConf">
+ <rel name="From" class="Class" id="DataReaderConf"/>
+ <rel name="To" class="Class" id="NICReceiverConf"/>
+ <rel name="Points">
+  <ref class="Point" id="1 DataReaderConf-2-NICReceiverConf"/>
+  <ref class="Point" id="2 DataReaderConf-2-NICReceiverConf"/>
+  <ref class="Point" id="3 DataReaderConf-2-NICReceiverConf"/>
+  <ref class="Point" id="4 DataReaderConf-2-NICReceiverConf"/>
+ </rel>
+</obj>
+
+<obj class="GLink" id="ReadoutInterface-2-FelixInterface">
+ <rel name="From" class="Class" id="ReadoutInterface"/>
+ <rel name="To" class="Class" id="FelixInterface"/>
+ <rel name="Points">
+  <ref class="Point" id="1 ReadoutInterface-2-FelixInterface"/>
+  <ref class="Point" id="2 ReadoutInterface-2-FelixInterface"/>
+  <ref class="Point" id="3 ReadoutInterface-2-FelixInterface"/>
+  <ref class="Point" id="4 ReadoutInterface-2-FelixInterface"/>
+ </rel>
+</obj>
+
+<obj class="GLink" id="ReadoutInterface-2-NICInterface">
+ <rel name="From" class="Class" id="ReadoutInterface"/>
+ <rel name="To" class="Class" id="NICInterface"/>
+ <rel name="Points">
+  <ref class="Point" id="1 ReadoutInterface-2-NICInterface"/>
+  <ref class="Point" id="2 ReadoutInterface-2-NICInterface"/>
+  <ref class="Point" id="3 ReadoutInterface-2-NICInterface"/>
+  <ref class="Point" id="4 ReadoutInterface-2-NICInterface"/>
+ </rel>
+</obj>
+
+<obj class="GLink" id="StreamParameters-2-EthStreamParameters">
+ <rel name="From" class="Class" id="StreamParameters"/>
+ <rel name="To" class="Class" id="EthStreamParameters"/>
+ <rel name="Points">
+  <ref class="Point" id="1 StreamParameters-2-EthStreamParameters"/>
+  <ref class="Point" id="2 StreamParameters-2-EthStreamParameters"/>
+  <ref class="Point" id="3 StreamParameters-2-EthStreamParameters"/>
+  <ref class="Point" id="4 StreamParameters-2-EthStreamParameters"/>
+ </rel>
+</obj>
+
+<obj class="GLink" id="StreamParameters-2-FelixStreamParameters">
+ <rel name="From" class="Class" id="StreamParameters"/>
+ <rel name="To" class="Class" id="FelixStreamParameters"/>
+ <rel name="Points">
+  <ref class="Point" id="1 StreamParameters-2-FelixStreamParameters"/>
+  <ref class="Point" id="2 StreamParameters-2-FelixStreamParameters"/>
+  <ref class="Point" id="3 StreamParameters-2-FelixStreamParameters"/>
+  <ref class="Point" id="4 StreamParameters-2-FelixStreamParameters"/>
+ </rel>
+</obj>
+
+<obj class="Point" id="1 DataReader-2-DataReaderConf-via-configuration">
+ <attr name="x" type="s16" val="57"/>
+ <attr name="y" type="s16" val="24"/>
+</obj>
+
+<obj class="Point" id="1 DataReader-2-ReadoutInterface-via-interfaces">
+ <attr name="x" type="s16" val="57"/>
+ <attr name="y" type="s16" val="24"/>
+</obj>
+
+<obj class="Point" id="1 DataReaderConf-2-NICReceiverConf">
+ <attr name="x" type="s16" val="37"/>
+ <attr name="y" type="s16" val="51"/>
+</obj>
+
+<obj class="Point" id="1 NICInterface-2-NICInterfaceConfiguration-via-configuration">
+ <attr name="x" type="s16" val="23"/>
+ <attr name="y" type="s16" val="78"/>
+</obj>
+
+<obj class="Point" id="1 NICInterfaceConfiguration-2-NICStatsConf-via-stats_conf">
+ <attr name="x" type="s16" val="132"/>
+ <attr name="y" type="s16" val="146"/>
+</obj>
+
+<obj class="Point" id="1 ReadoutInterface-2-FelixInterface">
+ <attr name="x" type="s16" val="78"/>
+ <attr name="y" type="s16" val="24"/>
+</obj>
+
+<obj class="Point" id="1 ReadoutInterface-2-NICInterface">
+ <attr name="x" type="s16" val="78"/>
+ <attr name="y" type="s16" val="24"/>
+</obj>
+
+<obj class="Point" id="1 StreamParameters-2-EthStreamParameters">
+ <attr name="x" type="s16" val="17"/>
+ <attr name="y" type="s16" val="38"/>
+</obj>
+
+<obj class="Point" id="1 StreamParameters-2-FelixStreamParameters">
+ <attr name="x" type="s16" val="103"/>
+ <attr name="y" type="s16" val="38"/>
+</obj>
+
+<obj class="Point" id="2 DataReader-2-DataReaderConf-via-configuration">
+ <attr name="x" type="s16" val="57"/>
+ <attr name="y" type="s16" val="71"/>
+</obj>
+
+<obj class="Point" id="2 DataReader-2-ReadoutInterface-via-interfaces">
+ <attr name="x" type="s16" val="57"/>
+ <attr name="y" type="s16" val="35"/>
+</obj>
+
+<obj class="Point" id="2 DataReaderConf-2-NICReceiverConf">
+ <attr name="x" type="s16" val="37"/>
+ <attr name="y" type="s16" val="203"/>
+</obj>
+
+<obj class="Point" id="2 NICInterface-2-NICInterfaceConfiguration-via-configuration">
+ <attr name="x" type="s16" val="23"/>
+ <attr name="y" type="s16" val="351"/>
+</obj>
+
+<obj class="Point" id="2 NICInterfaceConfiguration-2-NICStatsConf-via-stats_conf">
+ <attr name="x" type="s16" val="132"/>
+ <attr name="y" type="s16" val="330"/>
+</obj>
+
+<obj class="Point" id="2 ReadoutInterface-2-FelixInterface">
+ <attr name="x" type="s16" val="78"/>
+ <attr name="y" type="s16" val="25"/>
+</obj>
+
+<obj class="Point" id="2 ReadoutInterface-2-NICInterface">
+ <attr name="x" type="s16" val="78"/>
+ <attr name="y" type="s16" val="93"/>
+</obj>
+
+<obj class="Point" id="2 StreamParameters-2-EthStreamParameters">
+ <attr name="x" type="s16" val="17"/>
+ <attr name="y" type="s16" val="180"/>
+</obj>
+
+<obj class="Point" id="2 StreamParameters-2-FelixStreamParameters">
+ <attr name="x" type="s16" val="103"/>
+ <attr name="y" type="s16" val="106"/>
+</obj>
+
+<obj class="Point" id="3 DataReader-2-DataReaderConf-via-configuration">
+ <attr name="x" type="s16" val="50"/>
+ <attr name="y" type="s16" val="71"/>
+</obj>
+
+<obj class="Point" id="3 DataReader-2-ReadoutInterface-via-interfaces">
+ <attr name="x" type="s16" val="26"/>
+ <attr name="y" type="s16" val="35"/>
+</obj>
+
+<obj class="Point" id="3 DataReaderConf-2-NICReceiverConf">
+ <attr name="x" type="s16" val="63"/>
+ <attr name="y" type="s16" val="203"/>
+</obj>
+
+<obj class="Point" id="3 NICInterface-2-NICInterfaceConfiguration-via-configuration">
+ <attr name="x" type="s16" val="44"/>
+ <attr name="y" type="s16" val="351"/>
+</obj>
+
+<obj class="Point" id="3 NICInterfaceConfiguration-2-NICStatsConf-via-stats_conf">
+ <attr name="x" type="s16" val="56"/>
+ <attr name="y" type="s16" val="330"/>
+</obj>
+
+<obj class="Point" id="3 ReadoutInterface-2-FelixInterface">
+ <attr name="x" type="s16" val="57"/>
+ <attr name="y" type="s16" val="25"/>
+</obj>
+
+<obj class="Point" id="3 ReadoutInterface-2-NICInterface">
+ <attr name="x" type="s16" val="51"/>
+ <attr name="y" type="s16" val="93"/>
+</obj>
+
+<obj class="Point" id="3 StreamParameters-2-EthStreamParameters">
+ <attr name="x" type="s16" val="51"/>
+ <attr name="y" type="s16" val="180"/>
+</obj>
+
+<obj class="Point" id="3 StreamParameters-2-FelixStreamParameters">
+ <attr name="x" type="s16" val="34"/>
+ <attr name="y" type="s16" val="106"/>
+</obj>
+
+<obj class="Point" id="4 DataReader-2-DataReaderConf-via-configuration">
+ <attr name="x" type="s16" val="50"/>
+ <attr name="y" type="s16" val="17"/>
+</obj>
+
+<obj class="Point" id="4 DataReader-2-ReadoutInterface-via-interfaces">
+ <attr name="x" type="s16" val="26"/>
+ <attr name="y" type="s16" val="8"/>
+</obj>
+
+<obj class="Point" id="4 DataReaderConf-2-NICReceiverConf">
+ <attr name="x" type="s16" val="63"/>
+ <attr name="y" type="s16" val="12"/>
+</obj>
+
+<obj class="Point" id="4 NICInterface-2-NICInterfaceConfiguration-via-configuration">
+ <attr name="x" type="s16" val="44"/>
+ <attr name="y" type="s16" val="48"/>
+</obj>
+
+<obj class="Point" id="4 NICInterfaceConfiguration-2-NICStatsConf-via-stats_conf">
+ <attr name="x" type="s16" val="56"/>
+ <attr name="y" type="s16" val="26"/>
+</obj>
+
+<obj class="Point" id="4 ReadoutInterface-2-FelixInterface">
+ <attr name="x" type="s16" val="57"/>
+ <attr name="y" type="s16" val="66"/>
+</obj>
+
+<obj class="Point" id="4 ReadoutInterface-2-NICInterface">
+ <attr name="x" type="s16" val="51"/>
+ <attr name="y" type="s16" val="26"/>
+</obj>
+
+<obj class="Point" id="4 StreamParameters-2-EthStreamParameters">
+ <attr name="x" type="s16" val="51"/>
+ <attr name="y" type="s16" val="35"/>
+</obj>
+
+<obj class="Point" id="4 StreamParameters-2-FelixStreamParameters">
+ <attr name="x" type="s16" val="34"/>
+ <attr name="y" type="s16" val="17"/>
+</obj>
+
+<obj class="View" id="Unknown">
+ <attr name="drawing area x margin" type="u16" val="6"/>
+ <attr name="drawing area y margin" type="u16" val="4"/>
+ <attr name="font x margin" type="u16" val="3"/>
+ <attr name="font y margin" type="u16" val="2"/>
+ <attr name="font name" type="string" val="-adobe-helvetica-medium-r-normal--12-120-75-75-p-67-iso8859-1"/>
+ <attr name="aggregation sign size" type="u16" val="18"/>
+ <attr name="generalization sign size" type="u16" val="16"/>
+</obj>
+
+</oks-data>

@@ -3,10 +3,9 @@
  This package extends the schema from the coredal package
 to describe readout, dataflow and trigger  applications.
 
-  ![schema](schema.png)
-
-
 ## SmartDaqApplication
+
+![SmartDaqApplication schema class wiht inherited apps](apps.png)
 
  **SmartDaqApplication** is an abstract class that has no direct
 relationships with **DaqModules**. The **DaqModules** themselves must
@@ -22,6 +21,7 @@ know how to connect the modules internally and to network endpoints.
  implemetation calls the generate_modules() implementation of the
  specific subclass using a 'magic' map of class names to generate functions.
 
+Readout and Dataflow applications extend from **SmartDaqApplication**
 ## ReadoutApplication
 
  ![ReadoutApplication schema class diagram not including classes whose
@@ -31,28 +31,18 @@ know how to connect the modules internally and to network endpoints.
 and **ResourceSetAND**. This means it has a contains relationship that
 can contain any class inheriting from **RsourceBase** but should only
 contain **ReadoutGroups**. The `generate_modules()` method will
-generate a **DataReader** and set of **DataLinkHandlers** for each
-**ReadoutGroup** plus a single **TPHandler**. The modules are created
-according to the configuration given by the data_reader, link_handler
+generate a **DataReader** for each **ReadoutGroup** associatted to the application, and set of **ReadoutModule** object, i.e. **DLH** for each
+**DROStreamConf** plus a single **TPHandlerModule**. Optionally **DataRecorder** modules may be created (not supported yet)). The modules are created
+according to the configuration given by the data_reader, link_handler, data_recorder
 and tp_handler relationships respectively. Connections between pairs
 of modules are configured according to the queue_rules relationship
 inherited from **SmartDaqApplication**.
 
-### NICReader
+### Far Detector schema extensions
 
- The **NICReader**, which is generated on the fly by the
-**ReadoutApplication**'s `generate_modules()`, has a relationship to a
-**NICReceiverConf** which will be the same for all **NICReceivers** of
-the **ReadoutApplication** and maybe for all the
-**ReadoutApplications** in the **Session**. Its only distinguishing
-configuration item is the relationship it has to a **DROStreamConf**.
+![Class extensions for far detector](fd_customizations.png)
 
-## Notes/Queries
-
-The **EthStreamParameters** and the **FlxStreamParameters** classes
-both contain host addresses. It is not clear how these relate to the
-**VirtualHost**/**PhysicalHost** classes from the core schema.
-
+Several OKS classes have far detector specific customisations, as shown in the diagram.
 
 ## DataFlow applications
 

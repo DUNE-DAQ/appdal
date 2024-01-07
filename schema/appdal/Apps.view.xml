@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="ASCII"?>
+
+<!-- oks-data version 2.2 -->
+
+
+<!DOCTYPE oks-data [
+  <!ELEMENT oks-data (info, (include)?, (comments)?, (obj)+)>
+  <!ELEMENT info EMPTY>
+  <!ATTLIST info
+      name CDATA #IMPLIED
+      type CDATA #IMPLIED
+      num-of-items CDATA #REQUIRED
+      oks-format CDATA #FIXED "data"
+      oks-version CDATA #REQUIRED
+      created-by CDATA #IMPLIED
+      created-on CDATA #IMPLIED
+      creation-time CDATA #IMPLIED
+      last-modified-by CDATA #IMPLIED
+      last-modified-on CDATA #IMPLIED
+      last-modification-time CDATA #IMPLIED
+  >
+  <!ELEMENT include (file)*>
+  <!ELEMENT file EMPTY>
+  <!ATTLIST file
+      path CDATA #REQUIRED
+  >
+  <!ELEMENT comments (comment)*>
+  <!ELEMENT comment EMPTY>
+  <!ATTLIST comment
+      creation-time CDATA #REQUIRED
+      created-by CDATA #REQUIRED
+      created-on CDATA #REQUIRED
+      author CDATA #REQUIRED
+      text CDATA #REQUIRED
+  >
+  <!ELEMENT obj (attr | rel)*>
+  <!ATTLIST obj
+      class CDATA #REQUIRED
+      id CDATA #REQUIRED
+  >
+  <!ELEMENT attr (data)*>
+  <!ATTLIST attr
+      name CDATA #REQUIRED
+      type (bool|s8|u8|s16|u16|s32|u32|s64|u64|float|double|date|time|string|uid|enum|class|-) "-"
+      val CDATA ""
+  >
+  <!ELEMENT data EMPTY>
+  <!ATTLIST data
+      val CDATA #REQUIRED
+  >
+  <!ELEMENT rel (ref)*>
+  <!ATTLIST rel
+      name CDATA #REQUIRED
+      class CDATA ""
+      id CDATA ""
+  >
+  <!ELEMENT ref EMPTY>
+  <!ATTLIST ref
+      class CDATA #REQUIRED
+      id CDATA #REQUIRED
+  >
+]>
+
+<oks-data>
+
+<info name="" type="" num-of-items="26" oks-format="data" oks-version="oks-08-03-04-11-g3f5bde7 built &quot;Feb 21 2023&quot;" created-by="glehmann" created-on="lxplus928.cern.ch" creation-time="20240107T174859" last-modified-by="glehmann" last-modified-on="lxplus928.cern.ch" last-modification-time="20240107T174859"/>
+
+<obj class="Class" id="Application">
+ <attr name="x" type="s16" val="8"/>
+ <attr name="y" type="s16" val="6"/>
+</obj>
+
+<obj class="Class" id="DFApplication">
+ <attr name="x" type="s16" val="316"/>
+ <attr name="y" type="s16" val="121"/>
+</obj>
+
+<obj class="Class" id="DFOApplication">
+ <attr name="x" type="s16" val="188"/>
+ <attr name="y" type="s16" val="120"/>
+</obj>
+
+<obj class="Class" id="ReadoutApplication">
+ <attr name="x" type="s16" val="440"/>
+ <attr name="y" type="s16" val="120"/>
+</obj>
+
+<obj class="Class" id="SmartDaqApplication">
+ <attr name="x" type="s16" val="278"/>
+ <attr name="y" type="s16" val="8"/>
+</obj>
+
+<obj class="GLink" id="Application-2-SmartDaqApplication">
+ <rel name="From" class="Class" id="Application"/>
+ <rel name="To" class="Class" id="SmartDaqApplication"/>
+ <rel name="Points">
+  <ref class="Point" id="1 Application-2-SmartDaqApplication"/>
+  <ref class="Point" id="2 Application-2-SmartDaqApplication"/>
+  <ref class="Point" id="3 Application-2-SmartDaqApplication"/>
+  <ref class="Point" id="4 Application-2-SmartDaqApplication"/>
+ </rel>
+</obj>
+
+<obj class="GLink" id="SmartDaqApplication-2-DFApplication">
+ <rel name="From" class="Class" id="SmartDaqApplication"/>
+ <rel name="To" class="Class" id="DFApplication"/>
+ <rel name="Points">
+  <ref class="Point" id="1 SmartDaqApplication-2-DFApplication"/>
+  <ref class="Point" id="2 SmartDaqApplication-2-DFApplication"/>
+  <ref class="Point" id="3 SmartDaqApplication-2-DFApplication"/>
+  <ref class="Point" id="4 SmartDaqApplication-2-DFApplication"/>
+ </rel>
+</obj>
+
+<obj class="GLink" id="SmartDaqApplication-2-DFOApplication">
+ <rel name="From" class="Class" id="SmartDaqApplication"/>
+ <rel name="To" class="Class" id="DFOApplication"/>
+ <rel name="Points">
+  <ref class="Point" id="1 SmartDaqApplication-2-DFOApplication"/>
+  <ref class="Point" id="2 SmartDaqApplication-2-DFOApplication"/>
+  <ref class="Point" id="3 SmartDaqApplication-2-DFOApplication"/>
+  <ref class="Point" id="4 SmartDaqApplication-2-DFOApplication"/>
+ </rel>
+</obj>
+
+<obj class="GLink" id="SmartDaqApplication-2-ReadoutApplication">
+ <rel name="From" class="Class" id="SmartDaqApplication"/>
+ <rel name="To" class="Class" id="ReadoutApplication"/>
+ <rel name="Points">
+  <ref class="Point" id="1 SmartDaqApplication-2-ReadoutApplication"/>
+  <ref class="Point" id="2 SmartDaqApplication-2-ReadoutApplication"/>
+  <ref class="Point" id="3 SmartDaqApplication-2-ReadoutApplication"/>
+  <ref class="Point" id="4 SmartDaqApplication-2-ReadoutApplication"/>
+ </rel>
+</obj>
+
+<obj class="Point" id="1 Application-2-SmartDaqApplication">
+ <attr name="x" type="s16" val="141"/>
+ <attr name="y" type="s16" val="51"/>
+</obj>
+
+<obj class="Point" id="1 SmartDaqApplication-2-DFApplication">
+ <attr name="x" type="s16" val="95"/>
+ <attr name="y" type="s16" val="38"/>
+</obj>
+
+<obj class="Point" id="1 SmartDaqApplication-2-DFOApplication">
+ <attr name="x" type="s16" val="95"/>
+ <attr name="y" type="s16" val="38"/>
+</obj>
+
+<obj class="Point" id="1 SmartDaqApplication-2-ReadoutApplication">
+ <attr name="x" type="s16" val="95"/>
+ <attr name="y" type="s16" val="38"/>
+</obj>
+
+<obj class="Point" id="2 Application-2-SmartDaqApplication">
+ <attr name="x" type="s16" val="141"/>
+ <attr name="y" type="s16" val="19"/>
+</obj>
+
+<obj class="Point" id="2 SmartDaqApplication-2-DFApplication">
+ <attr name="x" type="s16" val="95"/>
+ <attr name="y" type="s16" val="131"/>
+</obj>
+
+<obj class="Point" id="2 SmartDaqApplication-2-DFOApplication">
+ <attr name="x" type="s16" val="95"/>
+ <attr name="y" type="s16" val="100"/>
+</obj>
+
+<obj class="Point" id="2 SmartDaqApplication-2-ReadoutApplication">
+ <attr name="x" type="s16" val="95"/>
+ <attr name="y" type="s16" val="100"/>
+</obj>
+
+<obj class="Point" id="3 Application-2-SmartDaqApplication">
+ <attr name="x" type="s16" val="31"/>
+ <attr name="y" type="s16" val="19"/>
+</obj>
+
+<obj class="Point" id="3 SmartDaqApplication-2-DFApplication">
+ <attr name="y" type="s16" val="131"/>
+</obj>
+
+<obj class="Point" id="3 SmartDaqApplication-2-DFOApplication">
+ <attr name="x" type="s16" val="28"/>
+ <attr name="y" type="s16" val="100"/>
+</obj>
+
+<obj class="Point" id="3 SmartDaqApplication-2-ReadoutApplication">
+ <attr name="x" type="s16" val="121"/>
+ <attr name="y" type="s16" val="100"/>
+</obj>
+
+<obj class="Point" id="4 Application-2-SmartDaqApplication">
+ <attr name="x" type="s16" val="31"/>
+ <attr name="y" type="s16" val="12"/>
+</obj>
+
+<obj class="Point" id="4 SmartDaqApplication-2-DFApplication">
+ <attr name="y" type="s16" val="17"/>
+</obj>
+
+<obj class="Point" id="4 SmartDaqApplication-2-DFOApplication">
+ <attr name="x" type="s16" val="28"/>
+ <attr name="y" type="s16" val="12"/>
+</obj>
+
+<obj class="Point" id="4 SmartDaqApplication-2-ReadoutApplication">
+ <attr name="x" type="s16" val="121"/>
+ <attr name="y" type="s16" val="21"/>
+</obj>
+
+<obj class="View" id="Unknown">
+ <attr name="drawing area x margin" type="u16" val="6"/>
+ <attr name="drawing area y margin" type="u16" val="4"/>
+ <attr name="font x margin" type="u16" val="3"/>
+ <attr name="font y margin" type="u16" val="2"/>
+ <attr name="font name" type="string" val="-adobe-helvetica-medium-r-normal--12-120-75-75-p-67-iso8859-1"/>
+ <attr name="aggregation sign size" type="u16" val="18"/>
+ <attr name="generalization sign size" type="u16" val="16"/>
+</obj>
+
+</oks-data>
